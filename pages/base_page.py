@@ -1,5 +1,4 @@
 import logging
-from components.components import WebElement
 
 
 class BasePage:
@@ -7,7 +6,6 @@ class BasePage:
         self.last_name_field = None
         self.driver = driver
         self.base_url = base_url
-        self.viewport = WebElement(driver, 'head > meta')
 
     def visit(self):
         return self.driver.get(self.base_url)
@@ -44,8 +42,6 @@ class BasePage:
         except Exception as ex:
             logging.log(1, ex)
             return False
-
-
 
 
 
