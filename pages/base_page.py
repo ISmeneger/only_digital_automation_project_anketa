@@ -20,28 +20,7 @@ class BasePage:
             return True
         return False
 
-    # .back() - стрелка назад в браузере
-    def back(self):
-        self.driver.back()
 
-    # forward() - стрелка вперед в браузере
-    def forward(self):
-        self.driver.forward()
-
-    # .refresh() - обновить страницу
-    def refresh(self):
-        self.driver.refresh()
-
-    # .title - получить title страницы
-    def get_title(self):
-        return self.driver.title
-
-    def alert(self):
-        try:
-            return self.driver.switch_to.alert
-        except Exception as ex:
-            logging.log(1, ex)
-            return False
 
 
 

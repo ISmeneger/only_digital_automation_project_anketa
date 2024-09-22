@@ -25,28 +25,6 @@ class WebElement:
     def click_force(self):
         self.driver.execute_script("arguments[0].click();", self.find_element())
 
-    # Метод для получения текста элемента
-    def get_text(self):
-        return str(self.find_element().text)
-
-    # Метод для проверки существования элемента в DOM (not exist - элемента нет в DOM)
-    def exist(self):
-        try:
-            self.find_element()
-        except NoSuchElementException:
-            return False
-        return True
-
-    # Метод проверки видимости элемнта на странице (not visible - элемент НЕ виден на странице)
-    def visible(self):
-        return self.find_element().is_displayed()
-
-    # Метод для проверки кол-ва одинаковых элементов на странице
-    def check_count_elements(self, count: int):
-        if len(self.find_elements()) == count:
-            return True
-        return False
-
     # Метод для ввода текста
     def send_keys(self, text: str):
         self.find_element().send_keys(text)
@@ -55,27 +33,6 @@ class WebElement:
     def clear(self):
         self.send_keys(Keys.CONTROL + 'a')
         self.send_keys(Keys.DELETE)
-
-    # Метод, который возвращает значение атрибутов с заданным именем
-    def get_dom_attribute(self, name: str):
-        value = self.find_element().get_dom_attribute(name)
-
-        if value is None:
-            return False
-        if len(value) > 0:
-            return value
-        return True
-
-    # Метод для проверки стилей CSS
-    def check_css(self, style, value=''):
-        return self.find_element().value_of_css_property(style) == value
-
-    # Метод прокрутки страницы до любого элемента
-    def scroll_to_element(self):
-        self.driver.execute_script(
-            "window.scrollTo(0, document.body.scrollHeight);",
-        self.find_element()
-        )
 
     # Метод для работы с любым типом локатора
     def get_by_type(self):

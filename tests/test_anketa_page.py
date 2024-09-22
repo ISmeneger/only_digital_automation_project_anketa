@@ -23,7 +23,6 @@ def test_anketa_page(browser):
     anketa_page.phone_field.click()
     anketa_page.phone_field.send_keys(phone_field)
     time.sleep(2)
-
     anketa_page.company_field.send_keys(company_field)
     time.sleep(2)
 
@@ -48,5 +47,9 @@ def test_anketa_page(browser):
 
     # Рекапчу на тестовых стендах всегда отключают, поэтому ее автоматизировать не нужно.
 
+#     Если поставить рекапчу в ручную, то можно нажать на кнопку "Отправить"
+
+    # anketa_page.button_send.click()
+    # time.sleep(2)
 
 

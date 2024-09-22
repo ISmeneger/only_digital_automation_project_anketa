@@ -17,8 +17,7 @@ class AnketaPage(BasePage):
         self.upload_file_field = WebElement(driver, "//input[@type='file']", 'xpath')
         self.bolee_20_mln_radio_button = WebElement(driver, 'form > div:nth-child(3) > div > label:nth-child(6) > span')
         self.socseti_radio_button = WebElement(driver, 'form > div:nth-child(4) > div > label:nth-child(3) > span')
-        self.reCAPTCHA = WebElement(driver, "//iframe", 'xpath')
-        self.recaptcha_checkbox = WebElement((driver, "div.recaptcha-checkbox-border"))
+        self.button_send = WebElement((driver, "form > div.sc-22c64804-0.lgfktX > button > span"))
 
 
 
