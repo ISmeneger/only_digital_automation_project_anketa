@@ -34,6 +34,16 @@ class WebElement:
         self.send_keys(Keys.CONTROL + 'a')
         self.send_keys(Keys.DELETE)
 
+     # Метод, который возвращает значение атрибутов с заданным именем
+    def get_dom_attribute(self, name: str):
+        value = self.find_element().get_dom_attribute(name)
+
+        if value is None:
+            return False
+        if len(value) > 0:
+            return value
+        return True
+
     # Метод для работы с любым типом локатора
     def get_by_type(self):
         if self.locator_type == 'id':
