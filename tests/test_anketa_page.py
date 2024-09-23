@@ -26,22 +26,22 @@ def test_anketa_page(browser):
     anketa_page.company_field.send_keys(company_field)
     time.sleep(2)
 
-    anketa_page.complex_of_works_radio_button.click()
+    anketa_page.complex_of_works_checkbox_button.click()
     time.sleep(2)
 
-    anketa_page.sait_radio_button.click()
+    anketa_page.sait_checkbox_button.click()
     time.sleep(2)
 
-    anketa_page.service_radio_button.click()
+    anketa_page.service_checkbox_button.click()
     time.sleep(2)
 
-    anketa_page.design_radio_button.click()
+    anketa_page.design_checkbox_button.click()
     time.sleep(2)
 
-    anketa_page.ux_audit_radio_button.click()
+    anketa_page.ux_audit_checkbox_button.click()
     time.sleep(2)
 
-    anketa_page.branding_radio_button.click()
+    anketa_page.branding_checkbox_button.click()
     time.sleep(2)
 
     anketa_page.textarea_field.send_keys(textarea_field)

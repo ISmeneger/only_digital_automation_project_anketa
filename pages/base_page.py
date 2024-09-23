@@ -20,7 +20,9 @@ class BasePage:
             return True
         return False
 
-
+# .title - получить title страницы
+    def get_title(self):
+        return self.driver.title
 
 
 

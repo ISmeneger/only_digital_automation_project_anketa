@@ -7,6 +7,8 @@ def test_placeholder(browser):
     placeholder_text = PlaceholderText(browser)
 
     placeholder_text.visit()
+
+    assert browser.title == 'Портфолио Only digital. Разработали 60+ проектов'
     assert placeholder_text.name.get_dom_attribute('placeholder') == 'Имя*'
     assert placeholder_text.email.get_dom_attribute('placeholder') == 'E-mail*'
     assert placeholder_text.phone.get_dom_attribute('placeholder') == 'Телефон'
