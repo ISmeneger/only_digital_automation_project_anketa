@@ -13,26 +13,13 @@ class WebElement:
     def find_element(self):
         return self.driver.find_element(self.get_by_type(), self.locator)
 
-    # Метод для поиска элементов (по неуникальному локатору) (проверка равенства кол-ва элементов, проверка неравенства кол-ва элементов)
-    def find_elements(self):
-        return self.driver.find_elements(self.get_by_type(), self.locator)
-
     # Метод, позволяющий кликнуть на элемент
     def click(self):
         self.find_element().click()
 
-    # Метод, позволяющий кликнуть на элемент принудительно
-    def click_force(self):
-        self.driver.execute_script("arguments[0].click();", self.find_element())
-
     # Метод для ввода текста
     def send_keys(self, text: str):
         self.find_element().send_keys(text)
-
-    # Метод для очистки текстового поля
-    def clear(self):
-        self.send_keys(Keys.CONTROL + 'a')
-        self.send_keys(Keys.DELETE)
 
      # Метод, который возвращает значение атрибутов с заданным именем
     def get_dom_attribute(self, name: str):
